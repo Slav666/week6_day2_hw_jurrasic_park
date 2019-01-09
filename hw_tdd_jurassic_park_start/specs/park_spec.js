@@ -64,6 +64,33 @@ dinosaur3 = new Dinosaur('p-rex', 'omnivore', 20);
     const actual = park.findDinosaurSpecies('p-rex');
     assert.deepStrictEqual(actual, expected);
   });
-it('should be able to remove all dinosaurs of a particular species' );
-// not finish
+
+it('should calculate the total number of visitors per day', function() {
+    park.addDinosaur(dinosaur);
+    park.addDinosaur(dinosaur2);
+    park.addDinosaur(dinosaur3);
+    park.addDinosaur(dinosaur1);
+    const expected = 140;
+    const actual = park.numberOfDailyVisitors();
+    assert.strictEqual(actual, expected);
+  });
+  it('should calculate the total number of visitors per year', function() {
+    park.addDinosaur(dinosaur1);
+    park.addDinosaur(dinosaur2);
+    park.addDinosaur(dinosaur3);
+    park.addDinosaur(dinosaur);
+    const expected = 51100;
+    actual = park.numberOfYearlyVisitors();
+    assert.strictEqual(actual, expected);
+  });
+
+  it('should calculate the total revenue from ticket sales for one year', function(){
+    park.addDinosaur(dinosaur1);
+    park.addDinosaur(dinosaur2);
+    park.addDinosaur(dinosaur3);
+    park.addDinosaur(dinosaur);
+    const expected = 511000;
+    actual = park.yearRevenue();
+    assert.strictEqual(actual, expected);
+  });
 });
